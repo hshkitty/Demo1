@@ -138,10 +138,10 @@ destroy(this.gb_options)
 end on
 
 type cb_1 from commandbutton within w_genapp_toolbars
-integer x = 791
-integer y = 308
-integer width = 402
-integer height = 112
+integer x = 763
+integer y = 268
+integer width = 270
+integer height = 84
 integer taborder = 40
 integer textsize = -10
 integer weight = 400
