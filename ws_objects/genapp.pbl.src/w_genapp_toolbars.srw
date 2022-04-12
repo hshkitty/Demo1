@@ -3,6 +3,8 @@ $PBExportComments$Generated MDI Toolbar Configuration
 forward
 global type w_genapp_toolbars from window
 end type
+type cb_1 from commandbutton within w_genapp_toolbars
+end type
 type rb_floating from radiobutton within w_genapp_toolbars
 end type
 type rb_bottom from radiobutton within w_genapp_toolbars
@@ -36,6 +38,7 @@ boolean controlmenu = true
 windowtype windowtype = response!
 long backcolor = 79416533
 boolean center = true
+cb_1 cb_1
 rb_floating rb_floating
 rb_bottom rb_bottom
 rb_right rb_right
@@ -96,6 +99,7 @@ cbx_showtips.Checked = GetApplication ( ).ToolbarTips
 end event
 
 on w_genapp_toolbars.create
+this.cb_1=create cb_1
 this.rb_floating=create rb_floating
 this.rb_bottom=create rb_bottom
 this.rb_right=create rb_right
@@ -106,7 +110,8 @@ this.cb_visible=create cb_visible
 this.cbx_showtips=create cbx_showtips
 this.cbx_showtext=create cbx_showtext
 this.gb_options=create gb_options
-this.Control[]={this.rb_floating,&
+this.Control[]={this.cb_1,&
+this.rb_floating,&
 this.rb_bottom,&
 this.rb_right,&
 this.rb_top,&
@@ -119,6 +124,7 @@ this.gb_options}
 end on
 
 on w_genapp_toolbars.destroy
+destroy(this.cb_1)
 destroy(this.rb_floating)
 destroy(this.rb_bottom)
 destroy(this.rb_right)
@@ -130,6 +136,21 @@ destroy(this.cbx_showtips)
 destroy(this.cbx_showtext)
 destroy(this.gb_options)
 end on
+
+type cb_1 from commandbutton within w_genapp_toolbars
+integer x = 791
+integer y = 308
+integer width = 402
+integer height = 112
+integer taborder = 40
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+string text = "Add"
+end type
 
 type rb_floating from radiobutton within w_genapp_toolbars
 integer x = 119
@@ -145,7 +166,6 @@ string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 79416533
 string text = "&Floating"
-borderstyle borderstyle = stylelowered!
 end type
 
 event clicked;//*-----------------------------------------------------------------*/
@@ -168,7 +188,6 @@ string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 79416533
 string text = "&Bottom"
-borderstyle borderstyle = stylelowered!
 end type
 
 event clicked;//*-----------------------------------------------------------------*/
@@ -191,7 +210,6 @@ string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 79416533
 string text = "&Right"
-borderstyle borderstyle = stylelowered!
 end type
 
 event clicked;//*-----------------------------------------------------------------*/
@@ -214,7 +232,6 @@ string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 79416533
 string text = "&Top"
-borderstyle borderstyle = stylelowered!
 end type
 
 event clicked;//*-----------------------------------------------------------------*/
@@ -237,7 +254,6 @@ string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 79416533
 string text = "&Left"
-borderstyle borderstyle = stylelowered!
 end type
 
 event clicked;//*-----------------------------------------------------------------*/
@@ -309,7 +325,6 @@ string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 79416533
 string text = "Show &PowerTips"
-borderstyle borderstyle = stylelowered!
 end type
 
 event clicked;//*-----------------------------------------------------------------*/
@@ -332,7 +347,6 @@ string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 79416533
 string text = "Show Te&xt"
-borderstyle borderstyle = stylelowered!
 end type
 
 event clicked;//*-----------------------------------------------------------------*/
@@ -356,6 +370,5 @@ string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 79416533
 string text = "Move"
-borderstyle borderstyle = stylelowered!
 end type
 
