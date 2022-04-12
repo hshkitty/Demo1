@@ -140,7 +140,7 @@ end on
 type cb_1 from commandbutton within w_genapp_toolbars
 integer x = 763
 integer y = 268
-integer width = 270
+integer width = 320
 integer height = 84
 integer taborder = 40
 integer textsize = -10
